@@ -6,6 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import CategoryNav from "@/components/CategoryNav";
 import { useProducts } from "@/contexts/ProductsContext";
 import heroBurger from "@/assets/hero-burger.jpg";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const { getFeaturedProducts, products } = useProducts();
@@ -13,10 +14,11 @@ const Index = () => {
   const mostOrdered = featuredProducts.length > 0 ? featuredProducts.slice(0, 4) : products.slice(0, 4);
 
   return (
+   
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
+   
       <section className="relative overflow-hidden bg-gradient-hero py-20 md:py-32">
         <div className="container relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -43,7 +45,7 @@ const Index = () => {
             <div className="relative animate-fade-in">
               <img
                 src={heroBurger}
-                alt="Premium Burger"
+                alt="My Burguer"
                 className="w-full max-w-lg mx-auto animate-float drop-shadow-2xl"
               />
             </div>
@@ -77,10 +79,13 @@ const Index = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+            
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
+
   );
 };
 
